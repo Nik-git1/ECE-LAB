@@ -50,26 +50,12 @@ export default function Page2() {
             <img src={Image} alt="Page2Image" />
           </motion.div>
 
-          {/* <div className=" bg-teal-400 p-12 mx-20 flex flex-col basis-7/12 m-5 p-5 backdrop-blur-xs">
-            <motion.div animate={animation2} className="text-5xl">
-              Basic Electronics Lab is intended to serve its facilities as one
-              of the teaching labs and also to facilitate teaching and research
-              projects. It provides many test and measurement test benches with
-              the necessary resources for the purpose of teaching laboratory
-              modules. This lab has a wide variety of analog components with
-              different models and specifications, which are used as per the
-              design performance requirements.
-            </motion.div>
-          </div> */}
+    
           <div className="relative mx-20 flex flex-col basis-7/12 ">
-            <motion.div animate={animation2} className="absolute inset-0 p-10 flex text-4xl justify-center items-center bg-opacity-70 bg-teal-400 backdrop-blur-sm text-white">
+            <motion.div animate={animation2} className="absolute inset-0 p-10 flex text-3xl justify-center items-center bg-opacity-70 bg-teal-400 backdrop-blur-sm text-white">
               Basic Electronics Lab is intended to serve its facilities as one
               of the teaching labs and also to facilitate teaching and research
-              projects. It provides many test and measurement test benches with
-              the necessary resources for the purpose of teaching laboratory
-              modules. This lab has a wide variety of analog components with
-              different models and specifications, which are used as per the
-              design performance requirements.
+              projects.
             </motion.div>
           </div>
         </div>

@@ -3,16 +3,22 @@ import React, { useState } from "react";
 function FacilitiesCard({ icon: Icon, name, link }) {
   const [hovered, setHovered] = useState(false);
 
+  const handleClick = () => {
+    window.open(link, "_blank");
+  };
+
   return (
     <>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <div
-          className="relative w-60 h-60 rounded-lg overflow-hidden transition-shadow shadow-md"
+          className={`relative w-60 h-60 rounded-lg overflow-hidden transition-shadow shadow-md ${
+            hovered ? "backdrop-blur-sm bg-opacity-10" : ""
+          }`}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           style={{
             boxShadow: hovered
-              ? "20px 0px 30px rgba(0, 255, 2550, 0.5)"
+              ? "20px 0px 30px rgba(0, 255, 255, 0.5)"
               : "-20px 0px 30px rgba(0, 255, 255, 0.3)",
           }}
         >

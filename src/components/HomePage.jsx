@@ -36,10 +36,6 @@ export default function HomePage() {
             size: "cover",
             repeat: "no-repeat",
           },
-          // fullScreen: {
-          //   enable: false,
-          //   zIndex: -1, // or any value is good for you, if you use -1 set `interactivity.detectsOn` to `"window"` if you need mouse interactions
-          // },
           fpsLimit: 120,
             "particles": {
               "number": {
@@ -111,13 +107,14 @@ export default function HomePage() {
         <Slider/>
     </div>
     <EceDesc/>
+    <section id='facilities'>
+        <Facilities/>
+    </section>
     <Courses/>
     <section id="equipments">
         <Equipments />
     </section>
-    <section id='facilities'>
-        <Facilities/>
-    </section>
+    
    
     <Projects/>
     

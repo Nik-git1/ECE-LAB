@@ -18,7 +18,7 @@ export default function Courses() {
 
   return (
     <div className='mx-4 my-12'>
-      <div className='text-5xl mx-4 p-1 my-12 underline'>
+      <div className='text-5xl mx-4 p-1 my-12'>
         <AnimatedTextWord text='Courses' />
       </div>
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>

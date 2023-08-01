@@ -1,4 +1,3 @@
-import "./App.css";
 import Navbar from "./components/Navbar";
 import FeedbackForm from "./components/FeedbackForm";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -6,8 +5,6 @@ import EceIntro from "./components/EceIntro";
 import ProjectPage from "./components/ProjectsPage";
 import HomePage from "./components/HomePage";
 import { useEffect, useState } from "react";
-// import EceIntro from "./components/EceIntro"
-
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 

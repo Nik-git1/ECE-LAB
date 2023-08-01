@@ -9,7 +9,7 @@ export default function Page3() {
   return (
     <div>
       
-       <div className='text-5xl mx-20 p-1 my-12 underline' > 
+       <div className='text-5xl mx-8 p-1 my-12' > 
        <AnimatedTextWord text="Equipements"/>
         </div>
         <InventorySlider1/>
