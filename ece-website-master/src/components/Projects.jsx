@@ -13,17 +13,17 @@ import pro3 from './assests/ProjectImages/pro3.jpg'
 import pro4 from './assests/ProjectImages/pro4.jpg'
 
 export default function Page5() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine) => {
+  //   await loadFull(engine);
+  // }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
+  // const particlesLoaded = useCallback(async (container) => {
+  //   await console.log(container);
+  // }, []);
 
   return (
     <div style={{ position: "relative" }}>
-      <Particles
+      {/* <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
@@ -133,7 +133,7 @@ export default function Page5() {
           detectRetina: true,
         }}
         style={{ position: "absolute", top: 0, left: 0, zIndex: -1 }}
-      />
+      /> */}
 
       <div>
         <div className="text-5xl mx-16 my-8 underline">

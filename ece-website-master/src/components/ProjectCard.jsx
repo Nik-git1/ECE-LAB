@@ -15,7 +15,7 @@ export default function ProjectCard({ image }) {
             }}
           >
             <div className="absolute text-xl">
-              <i className="fa fa-heart text-white hover:text-red-light ml-4 mt-4 cursor-pointer"></i>
+              <i className="fa fa-heart text-white hover:text-red-light ml-4 mt-4"></i>
             </div>
           </div>
 
@@ -32,7 +32,7 @@ export default function ProjectCard({ image }) {
                 </div>
 
                 <div className="w-full lg:w-3/5 lg:px-3">
-                  <p className="text-xl mt-4 lg:mt-0 text-justify md:text-left text-sm">
+                  <p className="text-xl mt-4 lg:mt-0 text-justify md:text-left ">
                     Project Desription? The Cathedral of Vasily the Blessed
                     (Russian: Собор Василия Блаженного, Sobor Vasiliya
                     Blazhennogo), commonly known as Saint Basil's Cathedral, is
@@ -41,7 +41,7 @@ export default function ProjectCard({ image }) {
                 </div>
 
                 <div className="w-full lg:w-1/5 mt-6 lg:mt-0 lg:px-4 text-center md:text-left">
-                  <button className="bg-white hover:bg-grey-darker hover:text-white border border-solid border-grey w-1/3 lg:w-full py-2">
+                  <button className="bg-white hover:bg-grey-darker hover:bg-teal-300 border border-solid border-grey w-1/3 lg:w-full py-2">
                     <Link
                       to="/projects"
                       target="_blank"

@@ -5,7 +5,7 @@ import pro1 from './assests/ProjectImages/pro1.jpg'
 import pro2 from './assests/ProjectImages/pro2.jpg'
 import pro3 from './assests/ProjectImages/pro3.jpg'
 import pro4 from './assests/ProjectImages/pro4.jpg'
-import inrto from './EceIntro'
+import intro from './EceIntro'
 
 
 

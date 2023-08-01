@@ -25,7 +25,7 @@ function Page6() {
       link: 'http://example.com/course6'
     },{
       icon: IoDocumentSharp,
-      name:"Documents",
+      name:"Docs",
       link: 'http://example.com/course6'
     },
    ];

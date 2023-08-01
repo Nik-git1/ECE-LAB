@@ -13,6 +13,7 @@ export default function Page3() {
        <AnimatedTextWord text="Equipements"/>
         </div>
         <InventorySlider1/>
+        <div className='h-10'></div>
         <InventorySlider2/>
     </div>
   )

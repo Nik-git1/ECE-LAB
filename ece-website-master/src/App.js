@@ -1,28 +1,37 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Slider from "./components/Slider";
-import EceDesc from "./components/EceDesc";
-import Equipments from "./components/Equipments";
-import Projects from "./components/Projects";
-import Facilities from "./components/Facilities";
 import FeedbackForm from "./components/FeedbackForm";
-import Courses from "./components/Courses";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import EceIntro from "./components/EceIntro";
 import ProjectPage from "./components/ProjectsPage";
 import HomePage from "./components/HomePage";
+import { useEffect, useState } from "react";
+// import EceIntro from "./components/EceIntro"
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+  }, []);
+
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<ProjectPage />} />
-      </Routes>
-      <FeedbackForm />
-    </Router>
+    <div>
+      {isLoading ? (
+       <EceIntro />
+      ) : (
+        <Router>
+          <Navbar/>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectPage />} />
+          </Routes>
+          <FeedbackForm />
+        </Router>
+      )}
+    </div>
   );
 }
-
 export default App;

@@ -28,7 +28,7 @@ export default function Page7() {
   return (
     <div>
       <section>
-        <div className="bg-teal-600 text-white p-8 ">
+        <div className="relative bg-teal-600 text-white p-8 ">
           <div class="mx-4 sm:mx-10 md:mx-20 xl:mx-60 flex flex-col md:flex-row ">
 
             <div class="flex flex-col w-full lg:w-1/3 p-4 md:p-4">

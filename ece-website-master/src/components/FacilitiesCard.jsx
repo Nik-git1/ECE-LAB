@@ -1,6 +1,4 @@
-import { FaCalculator, FaReact } from "react-icons/fa";
 import React, { useState } from "react";
-import { MdHardware } from "react-icons/md";
 
 function FacilitiesCard({ icon: Icon, name, link }) {
   const [hovered, setHovered] = useState(false);
@@ -9,9 +7,14 @@ function FacilitiesCard({ icon: Icon, name, link }) {
     <>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <div
-          className="relative w-60 h-60 rounded-lg overflow-hidden shadow-md"
+          className="relative w-60 h-60 rounded-lg overflow-hidden transition-shadow shadow-md"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
+          style={{
+            boxShadow: hovered
+              ? "20px 0px 30px rgba(0, 255, 2550, 0.5)"
+              : "-20px 0px 30px rgba(0, 255, 255, 0.3)",
+          }}
         >
           <div
             className={`absolute inset-0 flex justify-center items-center transition-transform duration-300 ease-in-out ${

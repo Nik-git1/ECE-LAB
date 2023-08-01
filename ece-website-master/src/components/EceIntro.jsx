@@ -1,45 +1,34 @@
 import React, { useEffect, useRef } from "react";
 import "./SparkAnimation.css"; // import the CSS file
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 
 
 function MySvgComponent() {
   const pathsRef = useRef([]);
-  const [ref, inView] = useInView({
-    threshold: 0.05, // set the threshold to 50% visibility
-    //triggerOnce: true, // trigger the animation only once
-  });
-  
 
   useEffect(() => {
-    if (inView) {
-      pathsRef.current.forEach((path) => {
-        const length = path.getTotalLength();
-        path.style.transition = path.style.WebkitTransition = "none";
-        path.style.strokeDasharray = length + " " + length;
-        path.style.strokeDashoffset = length;
-        path.getBoundingClientRect();
-        path.style.transition = path.style.WebkitTransition =
-          "stroke-dashoffset 2s ease-in-out";
-        path.style.strokeDashoffset = "0";
-      });
-    }
-  }, [inView, pathsRef]);
-  
+    pathsRef.current.forEach((path) => {
+      const length = path.getTotalLength();
+      // path.style.transition = path.style.WebkitTransition = "none";
+      path.style.strokeDasharray = length + " " + length;
+      path.style.strokeDashoffset = length;
+      path.getBoundingClientRect();
+      path.style.transition = path.style.WebkitTransition =
+        "stroke-dashoffset 2.5s ease-in-out";
+      path.style.strokeDashoffset = "0";
+    });
+  }, []);
 
   return (
-    <div ref={ref} className="mt-3" style={{overflow:"hidden"}}>
+    <div >
     <svg
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
     viewBox="0 0 960 560"
     style={{ enableBackground: "new 0 0 1000 560", objectFit: "cover" }}
     xmlSpace="preserve"
-    width="99vw"
-    height="88vh"
+    width="100vw"
+    height="100vh"
     preserveAspectRatio="xMidYMid slice"
   >
     <g id="lines">
@@ -197,10 +186,6 @@ function MySvgComponent() {
         className="st0"
         points="495,383 503.5,385.5 503.5,418 512.5,424.5 512.5,437 501.5,446 501.5,525 512.5,533.5 533,533.5"
       />
-      <polyline  ref={(path) => (pathsRef.current[57] = path)}
-        className="st01"
-        points="517.2,421.2 522.5,424.5 522.5,443 513.5,448.5 513.5,485 530.5,496.5 530.5,516 546.5,526.5 670,526.5 716,560 	"
-      />
       <polyline  ref={(path) => (pathsRef.current[58] = path)}
         className="st0"
         points="569.9,536.5 575.5,531.5 663,531.5 702.5,560 	"
@@ -327,14 +312,7 @@ function MySvgComponent() {
         className="st01"
         points="162,560.8 214.5,524.5 223,524.5 323.5,451 323.5,435 	"
       />
-      <polyline  ref={(path) => (pathsRef.current[94] = path)}
-        className="st0"
-        points="323,420.9 311.5,428 311.5,449 217,516.5 207,516.5 145.5,560.6 	"
-      />
-      <polyline  ref={(path) => (pathsRef.current[95] = path)}
-        className="st01"
-        points="132.5,560.3 204,511.5 211,511.5 306.5,442.9 306.5,421 323,409.5 	"
-      />
+      
       <polyline  ref={(path) => (pathsRef.current[96] = path)}
         className="st0"
         points="0,548.5 123,548.5 189.8,499.5 208,499.5 276.5,449.2 276.5,428 	"
@@ -354,7 +332,6 @@ function MySvgComponent() {
         points="255.2,419.5 242.5,428.5 242.5,440 107,533.5 0,536.4 	"
       />
       <polyline  ref={(path) => (pathsRef.current[102] = path)} className="st0" points="164.5,473 164.5,480 100.5,524 	" />
-      <polyline  ref={(path) => (pathsRef.current[103] = path)} className="st01" points="81.5,522 81.5,511 105.5,496 105.5,489 	" />
       <polyline  ref={(path) => (pathsRef.current[104] = path)} className="st0" points="138.5,480 138.5,485 103,511.2 	" />
       <polyline  ref={(path) => (pathsRef.current[105] = path)}
         className="st01"
@@ -365,11 +342,7 @@ function MySvgComponent() {
         className="st0"
         points="0,530.5 39,530.5 74.5,505.5 74.5,478 93,464.9 179.5,464.5 255.2,412.5 269,412.5 274.9,408.5 	"
       />
-      <polyline  ref={(path) => (pathsRef.current[108] = path)}
-        className="st01"
-        points="274,373.6 268,378.5 255,378.5 246.5,385.8 246.5,396 167,451.5 81,451.5 53.5,472.6 53.5,499 
-  28.7,517.5 -0.5,517.5 -0.5,514.5 "
-      />
+      
       <polyline  ref={(path) => (pathsRef.current[109] = path)}
         className="st0"
         points="274.4,362.6 271.4,361.2 264.7,367.5 217,367.5 210.5,372 210.5,400 157.7,437.5 71,437.5 
@@ -386,9 +359,7 @@ function MySvgComponent() {
       />
       <polyline  ref={(path) => (pathsRef.current[112] = path)} className="st01" points="194.5,353.8 205.7,345.5 225,345.5 	" />
       <line  ref={(path) => (pathsRef.current[113] = path)} className="st01" x1="1" y1="399.5" x2="10" y2="399.5" />
-      <polyline  ref={(path) => (pathsRef.current[114] = path)} className="st01" points="1,293.5 27,293.5 83.5,254 83.5,249 	" />
-      <polyline  ref={(path) => (pathsRef.current[115] = path)} className="st01" points="0,285.5 27,285.5 68.5,255.7 68.5,249 	" />
-      <polyline  ref={(path) => (pathsRef.current[116] = path)}
+    <polyline  ref={(path) => (pathsRef.current[116] = path)}
         className="st01"
         points="97.5,249 97.5,257 73.5,273.3 73.5,284 78.8,285.5 	"
       />
@@ -547,24 +518,13 @@ function MySvgComponent() {
         d="M272.5,1v59c0,0-0.1,0.5,0.2,0.9c0.3,0.4,0.2,0.5,0.8,0.7c0.5,0.2,0.6,0.2,1.2,0.2c0.6,0.1,0.9,0.1,1.3-0.1
   s0.6-0.4,1-0.7s0.3-0.1,0.5-1.1V0"
       />
-      <polyline  ref={(path) => (pathsRef.current[165] = path)}
-        className="st0"
-        points="311.5,0 311.5,65 315.7,70.5 340,70.5 371.3,92.5 385,92.5 	"
-      />
+      
       <path  ref={(path) => (pathsRef.current[166] = path)}
         className="st0"
         d="M330.5,62V33c0,0,0-1.1,0.5-1.6s0.8-0.8,1.2-1c0.5-0.2,0.5-0.2,1.2,0s1.3,0.8,1.7,1.2c0.3,0.5,0.3,1.3,0.3,1.3
   v29l32.8,23.5h6.7"
       />
-      <path  ref={(path) => (pathsRef.current[167] = path)}
-        className="st01"
-        d="M364.3,68.5l-4.8-3.5V25c0,0-0.3-0.8-0.9-1.2c-0.6-0.4-0.7-0.2-1.5-0.1c-0.8,0.2-1.1,0.3-1.4,0.9
-  c-0.3,0.6-0.2,1.4-0.2,1.4v37c0,0,0,1.4-0.2,1.9s-0.8,1.1-1.8,1.1s-2.3-0.2-2.5-0.4c-0.2-0.2-0.5-0.8-0.6-1.6c-0.1-0.8,0.2-1,0.2-1
-  V25c0,0,0.1-0.2-0.1-0.7c-0.2-0.4-0.3-0.7-1.2-1.1c-0.9-0.4-1.2-0.1-1.2-0.1s-0.9,0-1.8,0.6c-0.8,0.6-0.7,1.2-0.7,1.2v32l-1.1,0.7
-  l-1.5,0.2c0,0-1,0.1-1.7-0.3c-0.7-0.4-0.5-0.3-0.7-0.7c-0.2-0.3-0.1-0.9-0.1-0.9V16.7l3-2.7V5c0,0-0.2-0.7-0.8-1.2
-  s-0.7-0.6-1.6-0.8c-0.9-0.2-0.7,0-1.6,0.2c-0.9,0.2-1.1,0.8-1.1,0.8v6c0,0,0.1,0.8-0.4,1.2s-0.5,0.4-1.2,0.7s-1.1,0.2-1.9,0
-  c-0.8-0.2-1-0.3-1.2-0.6s-0.2-1.3-0.2-1.3V0"
-      />
+     
       <polyline  ref={(path) => (pathsRef.current[168] = path)}
         className="st0"
         points="383,1 384.8,72.8 404.5,87 404.5,118 412.5,123.2 412.5,141 408.3,144.2 	"
@@ -594,19 +554,13 @@ function MySvgComponent() {
       />
       <polyline  ref={(path) => (pathsRef.current[175] = path)} className="st0" points="435.5,0 435.5,65 439.5,67.5 440,88.5 	" />
       <polyline  ref={(path) => (pathsRef.current[176] = path)} className="st0" points="441.5,0 441.5,65 445.7,67.5 	" />
-      <polyline  ref={(path) => (pathsRef.current[177] = path)}
-        className="st0"
-        points="450.5,0 450.5,59 460.5,67.5 460.5,97 453.3,102.4 453,124 460.5,128.5 460.5,153 455.5,156 	"
-      />
+     
       <path  ref={(path) => (pathsRef.current[178] = path)}
         className="st01"
         d="M460.3,105.6c0,0,5.2-3.1,5.2-4.3s0-36.2,0-36.2l-10-8V0"
       />
       <polyline  ref={(path) => (pathsRef.current[179] = path)} className="st0" points="460.5,1 460.5,55 469.5,62 469.5,133 	" />
-      <polyline  ref={(path) => (pathsRef.current[180] = path)}
-        className="st01"
-        points="472.5,146.4 479.5,142.5 479.5,133 474,130 474.7,61.5 465.5,55.2 465.5,0 	"
-      />
+      
       <path  ref={(path) => (pathsRef.current[181] = path)}
         className="st0"
         d="M469.5,0v53l10,6.2l0.4,69.2c0,0,4.6,1.5,4.6,2.5s0,13,0,13"
@@ -654,12 +608,7 @@ function MySvgComponent() {
         className="st01"
         points=""
       />
-      <path  ref={(path) => (pathsRef.current[194] = path)}
-        className="st01"
-        d="M708.7,0l-38.6,26.4L670,75c0,0,0.4,0.5,0.9,0.9s1.2,0.8,1.6,0.8s1,0.2,1.6,0.2s0.9-0.1,1.4-0.5
-  s0.9-0.8,0.9-0.8l0.1-0.6V56c0,0,0.2-0.4,0.6-1c0,0,0.5-0.8,1.2-1.1c0.8-0.3,1.1-0.3,1.9-0.3s1.3,0.2,2,0.6
-  c0.7,0.4,2.2,1.8,2.2,1.8v17l8,7v15"
-      />
+     
       <polyline  ref={(path) => (pathsRef.current[195] = path)}
         className="st0"
         points="747.2,0.4 687.5,42 687.5,70 704.5,82.2 704.5,104 698,107.2 	"
@@ -672,7 +621,6 @@ function MySvgComponent() {
         className="st0"
         points="700.2,144.4 707.5,138.6 707.5,120 717.5,111.9 717.5,45 782.3,0 	"
       />
-      <polyline  ref={(path) => (pathsRef.current[198] = path)} className="st01" points="727.5,168 727.5,59 810.7,0 	" />
       <polyline  ref={(path) => (pathsRef.current[199] = path)}
         className="st0"
         points="817.5,0 733.5,59 733.5,172 712.7,187.3 700.3,187 686,196.7 670.3,196.3 664.3,201.3 	"
@@ -681,10 +629,7 @@ function MySvgComponent() {
         className="st01"
         points="666.4,210.9 678.3,201.5 689,201.5 704.3,190.5 718,190.5 738.5,175 738.5,62 828,0 	"
       />
-      <polyline  ref={(path) => (pathsRef.current[202] = path)}
-        className="st0"
-        points="804.7,102.7 795.3,109 794.7,168.7 800.3,172.7 	"
-      />
+     
       <path  ref={(path) => (pathsRef.current[203] = path)}
         className="st01"
         d="M654.8,237.8l3.8,2.7H733c0,0,95-65.2,95.3-66.2c0.3-1,1-42.3,1-42.3L960,41"
@@ -774,15 +719,7 @@ function MySvgComponent() {
   c0,0-0.6,0.4-0.5-2.1c0.1-2.5-0.2-21.4-0.2-21.4c0-0.3-0.1-0.8-0.5-1.2c-0.4-0.4-1-0.4-1.8-0.4c-0.8,0-1.5,0-2.2,0.4
   c0,0-0.8,0.5-1.2,1.8l0.4,28.3l-9.5,6.3"
       />
-      <path  ref={(path) => (pathsRef.current[221] = path)}
-        className="st01"
-        d="M891,165.5h9.8c0.4-1,1.7-0.6,3,0.1c1.1,0.6,1.6,1.4,1.8,1.9c0.4,0.8,0.6,1.5,0.7,2.1c0.2,1-0.1,2.2-0.2,2.9
-  l0.2,5.1c0.5,0.9,1.1,1.3,1.5,1.5c0.7,0.3,2.9,0.4,2.2,0.3l0,0c0.9,0.2,1.9-0.2,2.3-1c0.6-0.9,0.2-1.9,0.2-2L913,166l0.7-1.3l0,0
-  l0,0c0.3-0.2,1-0.5,1.8-0.5c0.7,0,1.2,0.3,1.7,0.5c0.6,0.3,1.1,0.6,1.5,1.2c0.4,0.6,0.4,1.3,0.3,1.7l-0.7,6.8
-  c0.1,0.2,0.4,0.8,1,1.2c0.7,0.4,1.5,0.2,1.8,0.2c0.3-0.1,0.9-0.3,1.5-0.8l1-1.8l-0.5-22.2c0-0.1-0.2-1.1,0.5-1.8
-  c0.6-0.6,1.3-0.5,1.8-0.5c0.3,0,1.2,0.1,1.8,0.7c0.6,0.5,0.7,1.2,0.8,2c0.1,0.5,0.2,1.2,0,2.2l-0.7,21.7c-0.1,0.2-0.1,0.6,0,1
-  c0.3,1,1.5,1.3,1.7,1.3c0.9,0.2,1.7-0.1,2.2-0.3c0.5-0.2,1-0.5,1.3-1.2c0.6-1-0.2-2.2-0.2-2.3V136l9.5-6.2l18,0.2"
-      />
+     
       <polyline  ref={(path) => (pathsRef.current[222] = path)}
         className="st0"
         points="808.8,125.3 809,120.5 817.8,114.8 818,88.7 943.5,0 	"
